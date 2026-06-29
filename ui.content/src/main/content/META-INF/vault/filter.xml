@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/krishhanvimart" mode="merge"/>
+    <filter root="/content/krishhanvimart" mode="merge"/>
+    <filter root="/content/dam/krishhanvimart" mode="merge">
+        <exclude pattern="/content/dam/krishhanvimart(/.*)?"/>
+        <include pattern="/content/dam/krishhanvimart/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/krishhanvimart/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/krishhanvimart" mode="merge"/>
+</workspaceFilter>

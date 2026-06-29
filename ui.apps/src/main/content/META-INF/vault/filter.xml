@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/krishhanvimart/clientlibs"/>
+    <filter root="/apps/krishhanvimart/components"/>
+    <filter root="/apps/krishhanvimart/i18n"/>
+</workspaceFilter>
