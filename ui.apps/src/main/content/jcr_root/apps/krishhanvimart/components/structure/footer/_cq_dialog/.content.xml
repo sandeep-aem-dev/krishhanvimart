@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Footer"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                  sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                  maximized="true">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic jcr:primaryType="nt:unstructured"
+                           jcr:title="Footer"
+                           sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <colum jcr:primaryType="nt:unstructured"
+                                           sling:resourceType="granite/ui/components/coral/foundation/fixedColumns">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <copyRight jcr:primaryType="nt:unstructured"
+                                                       sling:resourceType="granite/ui/component/coral/founfation/form/textField"
+                                                       fieldLabel="Copyright Text"
+                                                       name="./copyright"/>
+                                            <about jcr:primaryType="nt:unstructured"
+                                                   sling:resourceType="granite/ui/component/coral/founfation/form/textField"
+                                                   fieldLabel="About Us"
+                                                   name="./about"/>
+                                            <contact
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:respurce="granite/ui/component/coral/founfation/form/textField"
+                                                    fieldLabel="Contact"
+                                                    name="/.contact"/>
+
+                                            <privacy jcr:primaryType="nt:unstructured"
+                                                     sling:resourceType="granite/ui/component/coral/founfation/form/textField"
+                                                     fieldLabel="Privacy Policy"
+                                                     name="./privacy"/>
+                                            <careers jcr:primaryType="nt:unstructured"
+                                                     sling:resourceType="granite/ui/component/coral/founfation/form/textField"
+                                                     fieldLabel="Careers"
+                                                     name="./careers"/>
+                                        </items>
+                                    </colum>
+                                </items>
+                            </columns>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
