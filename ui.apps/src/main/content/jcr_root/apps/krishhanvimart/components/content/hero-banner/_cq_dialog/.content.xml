@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Hero Banner"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                  sling:resourcetype="granite/ui/components/coral/foundation/tabs"
+                  maximized="true">
+                <items jcr:primaryType="nt:unstructured">
+                    <!-- Basic Tab -->
+                    <basics jcr:primaryType="nt:unstructured"
+                            jcr:title="Hero Banner "
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <!-- Fixed columns layout -->
+                            <columns jcr:primaryType="nt:unstructured"
+                                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <!-- Banner Image -->
+                                            <image jcr:primaryType="nt:unstructured"
+                                                   sling:resourceType="granite/ui/components/coral/foundation/pathfield"
+                                                   fieldLabel="Banner Image"
+                                                   fieldDescription="Select an Image from DAM"
+                                                   name="./image"
+                                                   rootPath="/content/dam"/>
+                                            <!-- Heading -->
+                                            <heading jcr:primaryType="nt:unstructured"
+                                                     sling:resourceType="granite/ui/components/coral/foundation/textfield"
+                                                     fieldLabel="Heading"
+                                                     name="./heading"/>
+                                            <!--Description -->
+                                            <description jcr:primaryType="nt:unstructured"
+                                                         sling:resourceType="granite/ui/components/coral/foundation/textarea"
+                                                         fieldLabel="Description"
+                                                         name="./description"/>
+                                            <!-- Button Text -->
+                                            <buttontext jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/textfield"
+                                                        fieldLabel="Button Text"
+                                                        name="./buttonText"/>
+                                            <!-- Button Link -->
+                                            <buttonlink jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="Button Link"
+                                                        fieldDescription="Select an AEM Page"
+                                                        name=".buttonLink"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </basics>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
