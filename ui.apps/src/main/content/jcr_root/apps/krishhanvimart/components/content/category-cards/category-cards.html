@@ -1,0 +1,25 @@
+<!-- Load the Sling Model -->
+<sly data-sly-use.model="com.krishhanvimart.core.models.CategoryCardsModel"></sly>
+
+<!-- 1. The main outer container (Keep this for page layout/flex/grid wrapping) -->
+<div class="category-cards-container">
+
+    <!-- 2. Loop through individual cards cleanly -->
+    <div class="category-card-item" data-sly-list.item="${model.categoryItems}">
+
+        <!-- Card Assets & Text -->
+        <img src="${item.image}" alt="${item.title}"/>
+        <h2>${item.title}</h2>
+        <p>${item.description}</p>
+
+        <!-- 3. Smart Link Handling: Ensures .html isn't duplicated if it's an external URL -->
+        <a href="${item.buttonLink}.html">
+            ${item.buttonText}
+        </a>
+    </div>
+</div>
+
+<!-- 4. Fallback Placeholder if the component hasn't been authored yet -->
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty=!model.categoryItems}"></sly>
+
