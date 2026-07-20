@@ -1,14 +1,28 @@
+<sly data-sly-use.headerModel="com.krishhanvimart.core.models.HeaderModel"></sly>
 <div class="khm-header">
-    <h2>${properties.logoText}</h2>
-    <nav>
-        <ul>
+    <!-- Logo Section -->
+    <div class="khm-header__logo">
+        <a href="${headerModel.logoLink}.html">
+            <img src="${headerModel.logoImage}"
+                 alt="KrishHanviMart Logo"/>
+        </a>
+    </div>
+    <!-- Navigation Section -->
+    <nav class="khm-header__navigation">
+        <ul data-sly-list.navigationItem="${headerModel.navigationItems}">
             <li>
-                <a href="#">Home</a>
-                <a href="#">Products</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <a href="${navigationItem.menuLink}.html">
+                    ${navigationItem.menuText}
+                </a>
             </li>
         </ul>
     </nav>
-    <button>Login</button>
+
+    <!-- Login Button -->
+    <div class="khm-header__login">
+        <a href="${headerModel.loginButtonLink}.html">
+            ${headerModel.loginButtonText}
+        </a>
+    </div>
+
 </div>

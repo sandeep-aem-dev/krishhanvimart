@@ -1,25 +1,35 @@
-<!-- Load the Sling Model -->
+<!-- Import the Sling Model -->
 <sly data-sly-use.model="com.krishhanvimart.core.models.CategoryCardsModel"></sly>
 
-<!-- 1. The main outer container (Keep this for page layout/flex/grid wrapping) -->
-<div class="category-cards-container">
+<!-- Main container for all category cards -->
+<section class="category-cards-container">
 
-    <!-- 2. Loop through individual cards cleanly -->
-    <div class="category-card-item" data-sly-list.item="${model.categoryItems}">
+    <!-- Iterate through each CategoryItem returned by the Sling Model -->
+    <article class="category-card-item"
+             data-sly-list.item="${model.categoryItems}">
 
-        <!-- Card Assets & Text -->
-        <img src="${item.image}" alt="${item.title}"/>
+        <!-- Category Image -->
+        <img src="${item.image}"
+             alt="${item.title}"
+             loading="lazy"/>
+
+        <!-- Category Title -->
         <h2>${item.title}</h2>
+
+        <!-- Category Description -->
         <p>${item.description}</p>
 
-        <!-- 3. Smart Link Handling: Ensures .html isn't duplicated if it's an external URL -->
-        <a href="${item.buttonLink}.html">
+        <!-- Display button only if both text and link are authored -->
+        <a data-sly-test="${item.buttonText && item.buttonLink}"
+           href="${item.buttonLink}.html">
             ${item.buttonText}
         </a>
-    </div>
-</div>
 
-<!-- 4. Fallback Placeholder if the component hasn't been authored yet -->
+    </article>
+
+</section>
+
+<!-- Display placeholder in Author mode when no categories are configured -->
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-     data-sly-call="${templates.placeholder @ isEmpty=!model.categoryItems}"></sly>
-
+     data-sly-call="${templates.placeholder @ isEmpty=model.categoryItems.size == 0}">
+</sly>
